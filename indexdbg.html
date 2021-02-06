@@ -1,0 +1,37 @@
+
+<div class="breadcrumb-list" xmlns:v="http://rdf.data-vocabulary.org/#"><span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="https://www.mezon.lt/">Pradinis</a></span> <span class="chevron">›</span> <span class="breadcrumb-current">Kur veikia?</span></div>
+<h1 class="entry-title post-title" style="padding-bottom: 10px; display: inline-block; border-bottom: 4px solid;">Kur veikia?<small> (Neoficialus)</small></h1>
+<div>
+<div id="content" class="grid col-940" style="margin:0px">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+Tai yra neoficialus žemėlapis. GALI BŪTI NETIKSLUMŲ. USE IT AT YOUR OWN RISK.<br>Kai kur geriau, kad modemas būtų šalia lango. Žemėlapiui reikalingas Javascript.
+<p><span style="color: #ff0055; font-size: 14pt;"><a style="color: #ff0055;" href="2013EDIT.jpg" target="_blank"><span style="text-decoration: underline;"><b>2013 Modifikuotas žemėlapis <small>(Vilnius arčiau)</small> &gt;&nbsp;</b></span></a></span></p>
+<p><span style="color: #ff0055; font-size: 14pt;"><a style="color: #ff0055;" href="https://www.mezon.lt/wp-content/uploads/2017/06/LTE-ir-Wifi-_ryšio-žemėlapis.jpg" target="_blank"><span style="text-decoration: underline;"><b>MEZON INTERNETO RYŠIO ŽEMĖLAPIS &gt;&nbsp;</b></span></a></span> // <span style="color: #ff0055; font-size: 14pt;"><a style="color: #ff0055;" href="sources/ltewifisrc.jpg" target="_blank"><span style="text-decoration: underline;"><b><small>(atsargine kopija)</small> &gt;&nbsp;</b></span></a></span></p>
+<p><span style="color: #ff0055; font-size: 14pt;"><a style="color: #ff0055;" href="maptiler/index.html" target="_blank"><span style="text-decoration: underline;"><b>Tiled, bet su menku zoom, beveik gerai su kalibruotas su vandens ženklais (Maptiler) &gt;&nbsp;</b></span></a></span></p>
+<div id = "map" style = "width:900px; height:580px"></div>
+      <script>
+         // Creating map options
+         var mapOptions = {
+            center: [55.169438, 23.881275],
+            zoom: 7,
+			maxZoom: 14
+         }
+         var map = new L.map('map', mapOptions); // Creating a map object
+         
+         // Creating a Layer object
+         var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+         map.addLayer(layer);  // Adding layer to the map
+         
+         // Creating Image overlay
+         var imageUrl = 'dbgmezon.png';
+         var imageBounds = [[54.169438-0.2000, 20.881275+0.0800], [54.169438-0.3010+2.51, 20.881275+5+0.7100]];
+         var overlay = L.imageOverlay(imageUrl, imageBounds, {
+                 opacity: 0.9, attribution: 'First version, MIGHT HAVE INACCURACIES<br><small>Unofficial </small><a href="https://mezon.lt/">MEZON</a><small> Signal map </small>| <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors </a>'
+             });
+         overlay.addTo(map);
+      </script>
+	  <p><span style="color: #f81337; font-size: 14pt;"><b>Šio žemėlapio kurėjai nėra MEZON, Telecentro ar Bitės atstovai.</b></span></p>
+</div><!-- end of #wrapper -->
+<hr>
+</div><!-- end of #container -->
